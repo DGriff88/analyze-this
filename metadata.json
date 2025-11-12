@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Intelligent Assistant",
+  "description": "An application leveraging Gemini for text analysis, image understanding, and web-grounded search to provide intelligent assistance for various tasks.",
+  "requestFramePermissions": []
+}
