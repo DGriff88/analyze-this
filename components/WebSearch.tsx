@@ -29,7 +29,7 @@ const WebSearch: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-800/50 rounded-lg p-6 shadow-lg backdrop-blur-md border border-slate-700">
+    <div className="bg-[#101232]/60 rounded-lg p-6 shadow-lg backdrop-blur-md border border-[#3a2d5e]">
       <h2 className="text-2xl font-bold mb-4 text-white">Web Search</h2>
       <p className="text-slate-400 mb-6">Ask questions about recent events or anything that requires up-to-date information. Powered by Gemini 2.5 Flash with Google Search grounding.</p>
       
@@ -40,24 +40,24 @@ const WebSearch: React.FC = () => {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && !isLoading && handleSubmit()}
           placeholder="e.g., What are the latest AI developments this month?"
-          className="flex-grow p-3 bg-slate-900 border border-slate-600 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors duration-200"
+          className="flex-grow p-3 bg-[#0a0a2a] border border-[#3a2d5e] rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200"
           disabled={isLoading}
         />
         <button
           onClick={handleSubmit}
           disabled={isLoading || !query.trim()}
-          className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 focus:ring-offset-slate-900 disabled:bg-slate-500 disabled:cursor-not-allowed transition-colors duration-200"
+          className="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 focus:ring-offset-[#0a0a2a] disabled:bg-gray-700 disabled:cursor-not-allowed transition-colors duration-200"
         >
           {isLoading ? <LoadingSpinner /> : <MagnifyingGlassIcon className="w-5 h-5" />}
         </button>
       </div>
 
-      {error && <div className="mt-4 p-3 bg-red-900/50 text-red-300 border border-red-700 rounded-md">{error}</div>}
+      {error && <div className="mt-4 p-3 bg-red-900/30 text-red-400 border border-red-800 rounded-md">{error}</div>}
 
       {result && (
         <div className="mt-6">
           <h3 className="text-xl font-semibold mb-2 text-white">Answer:</h3>
-          <div className="p-4 bg-slate-900 rounded-md border border-slate-700 prose prose-invert max-w-none text-slate-300 whitespace-pre-wrap">
+          <div className="p-4 bg-[#0a0a2a] rounded-md border border-[#3a2d5e] prose prose-invert max-w-none text-slate-300 whitespace-pre-wrap">
             {result.text}
           </div>
           {result.sources && result.sources.length > 0 && (
@@ -70,7 +70,7 @@ const WebSearch: React.FC = () => {
                       href={source.web?.uri} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-cyan-400 hover:text-cyan-300 hover:underline"
+                      className="text-teal-400 hover:text-teal-300 hover:underline"
                     >
                       {source.web?.title || source.web?.uri}
                     </a>

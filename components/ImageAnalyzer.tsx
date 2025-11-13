@@ -54,13 +54,13 @@ const ImageAnalyzer: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-800/50 rounded-lg p-6 shadow-lg backdrop-blur-md border border-slate-700">
+    <div className="bg-[#101232]/60 rounded-lg p-6 shadow-lg backdrop-blur-md border border-[#3a2d5e]">
       <h2 className="text-2xl font-bold mb-4 text-white">Image Inspector</h2>
       <p className="text-slate-400 mb-6">Upload an image and ask a question about it. Powered by Gemini 2.5 Flash for quick visual understanding.</p>
       
       <div className="grid md:grid-cols-2 gap-6">
         <div 
-          className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-slate-600 rounded-lg text-center cursor-pointer hover:border-cyan-500 hover:bg-slate-800 transition-colors"
+          className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-[#3a2d5e] rounded-lg text-center cursor-pointer hover:border-teal-500 hover:bg-[#101232] transition-colors"
           onClick={() => fileInputRef.current?.click()}
         >
           <input
@@ -77,7 +77,7 @@ const ImageAnalyzer: React.FC = () => {
             <>
               <DocumentArrowUpIcon className="w-12 h-12 text-slate-500" />
               <p className="mt-2 text-sm text-slate-400">
-                <span className="font-semibold text-cyan-400">Click to upload</span> or drag and drop
+                <span className="font-semibold text-teal-400">Click to upload</span> or drag and drop
               </p>
               <p className="text-xs text-slate-500">PNG, JPG, WEBP up to 4MB</p>
             </>
@@ -89,7 +89,7 @@ const ImageAnalyzer: React.FC = () => {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             placeholder="e.g., What is in this image? Describe the main subject."
-            className="w-full h-40 md:h-full p-3 bg-slate-900 border border-slate-600 rounded-md focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-colors duration-200 resize-none"
+            className="w-full h-40 md:h-full p-3 bg-[#0a0a2a] border border-[#3a2d5e] rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors duration-200 resize-none"
             disabled={isLoading}
           />
         </div>
@@ -99,18 +99,18 @@ const ImageAnalyzer: React.FC = () => {
         <button
           onClick={handleSubmit}
           disabled={isLoading || !prompt.trim() || !image}
-          className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 focus:ring-offset-slate-900 disabled:bg-slate-500 disabled:cursor-not-allowed transition-colors duration-200"
+          className="w-full inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 focus:ring-offset-[#0a0a2a] disabled:bg-gray-700 disabled:cursor-not-allowed transition-colors duration-200"
         >
           {isLoading ? <LoadingSpinner /> : <><PhotoIcon className="w-5 h-5 mr-2" /> Analyze Image</>}
         </button>
       </div>
 
-      {error && <div className="mt-4 p-3 bg-red-900/50 text-red-300 border border-red-700 rounded-md">{error}</div>}
+      {error && <div className="mt-4 p-3 bg-red-900/30 text-red-400 border border-red-800 rounded-md">{error}</div>}
 
       {result && (
         <div className="mt-6">
           <h3 className="text-xl font-semibold mb-2 text-white">Analysis:</h3>
-          <div className="p-4 bg-slate-900 rounded-md border border-slate-700 prose prose-invert max-w-none text-slate-300 whitespace-pre-wrap">
+          <div className="p-4 bg-[#0a0a2a] rounded-md border border-[#3a2d5e] prose prose-invert max-w-none text-slate-300 whitespace-pre-wrap">
             {result}
           </div>
         </div>

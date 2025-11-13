@@ -29,11 +29,11 @@ const App: React.FC = () => {
   ], []);
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-200 font-sans">
-      <header className="bg-slate-800/50 backdrop-blur-sm border-b border-slate-700 p-4 sticky top-0 z-10">
+    <div className="min-h-screen bg-[#0a0a2a] text-slate-200 font-sans">
+      <header className="bg-[#101232]/70 backdrop-blur-sm border-b border-[#3a2d5e] p-4 sticky top-0 z-10">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <SparklesIcon className="w-8 h-8 text-cyan-400" />
+            <SparklesIcon className="w-8 h-8 text-teal-400" />
             <h1 className="text-2xl font-bold tracking-tight text-white">Intelligent Assistant</h1>
           </div>
         </div>
@@ -41,7 +41,7 @@ const App: React.FC = () => {
       
       <main className="container mx-auto p-4 md:p-8">
         <div className="mb-8">
-          <div className="border-b border-slate-700">
+          <div className="border-b border-[#3a2d5e]">
             <nav className="-mb-px flex space-x-4" aria-label="Tabs">
               {tabs.map(tab => (
                 <button
@@ -49,8 +49,8 @@ const App: React.FC = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`${
                     activeTab === tab.id
-                      ? 'border-cyan-400 text-cyan-400'
-                      : 'border-transparent text-slate-400 hover:text-slate-200 hover:border-slate-500'
+                      ? 'border-teal-400 text-teal-400'
+                      : 'border-transparent text-slate-400 hover:text-slate-100 hover:border-gray-600'
                   } flex items-center whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors duration-200 focus:outline-none`}
                   aria-current={activeTab === tab.id ? 'page' : undefined}
                 >
